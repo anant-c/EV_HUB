@@ -31,9 +31,12 @@ const Navbar = () => {
     <>
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/95 shadow-lg' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center">
-            <Zap className="h-6 w-6 text-blue-400 mr-2" />
-            <span className="text-xl font-bold text-blue-400">EVHub</span>
+          <div className="flex flex-col items-start">
+            <div className="flex items-center">
+              <Zap className="h-6 w-6 text-blue-400 mr-2" />
+              <span className="text-xl font-bold text-blue-400">batteryfy</span>
+            </div>
+            <span className="text-blue-200 font-bold text-lg pl-8 ">your life!!</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -62,112 +65,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* Mobile Side Menu */}
-      <div 
-        className={`fixed top-0 left-0 h-full w-64 bg-gray-900 z-50 transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:hidden`}
-      >
-        <div className="p-4 flex justify-between items-center border-b border-gray-800">
-          <div className="flex items-center">
-            <Zap className="h-6 w-6 text-blue-400 mr-2" />
-            <span className="text-xl font-bold text-blue-400">EVHub</span>
-          </div>
-          <button 
-            className="text-white focus:outline-none" 
-            onClick={closeMobileMenu}
-            aria-label="Close menu"
-          >
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-        
-        <div className="p-4">
-          <ul className="space-y-4">
-            <li>
-              <Link 
-                to="home" 
-                spy={true} 
-                smooth={true} 
-                duration={500} 
-                className="block py-2 hover:text-blue-400 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="charging" 
-                spy={true} 
-                smooth={true} 
-                duration={500} 
-                className="block py-2 hover:text-blue-400 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Charging
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="food" 
-                spy={true} 
-                smooth={true} 
-                duration={500} 
-                className="block py-2 hover:text-blue-400 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Food & Shopping
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="stay" 
-                spy={true} 
-                smooth={true} 
-                duration={500} 
-                className="block py-2 hover:text-blue-400 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Stay
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="park" 
-                spy={true} 
-                smooth={true} 
-                duration={500} 
-                className="block py-2 hover:text-blue-400 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Park
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="contact" 
-                spy={true} 
-                smooth={true} 
-                duration={500} 
-                className="block py-2 hover:text-blue-400 transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Overlay when mobile menu is open */}
-      {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-          onClick={closeMobileMenu}
-        ></div>
-      )}
     </>
   );
 };
