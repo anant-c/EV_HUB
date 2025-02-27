@@ -29,11 +29,11 @@ function App() {
         <>
           <Navbar />
           <Hero />
-          <SearchSection />
+          {/* <SearchSection />
           <ChargingStations />
           <FoodSection />
           <ParkSection />
-          <Footer />
+          <Footer /> */}
         </>
       )}
     </div>
